@@ -4,18 +4,28 @@ void main() {
     {'orderID': 2, 'ordername': 'chips', 'price': 20},
   ];
 
-orderSystem(orderId: 1, price: 1, ordername: "cola");
-orderSystem(orderId: 2, price: 10);
- 
+//orderSystem(orderId: 1, price: 1, ordername: "cola");
+//orderSystem(orderId: 2, price: 10);
+
+    for (int i=0; i <orders.length ; i++) {
+    orderSystem(
+      orderId: orders[i]['orderID'],
+      price: orders[i]['price'].toDouble(),
+      ordername: orders[i]['ordername'],
+    );
+  }
+
 }
 
 void orderSystem({required int orderId ,required double price , String? ordername}) {
 double taxValue = 0.02;
-double newPrice = price*taxValue+price; 
+double newPrice = (price*taxValue)+price; 
+
 
 print("the Order number $orderId which is : $ordername , and the price is $price");
 print("the price after tax is : $newPrice ");
 print("------------------------------------------------------");
+
 
 
 }
